@@ -219,7 +219,8 @@ func (item *ItemChar) drawText(text string, fonts []*truetype.Font) error {
 	for i, s := range text {
 		// fontSize := item.height * (rand.Intn(7) + 7) / 16
 		fontSize := item.height * 16 / 16
-		c.SetSrc(image.NewUniform(RandDeepColor()))
+		// c.SetSrc(image.NewUniform(RandDeepColor()))
+		c.SetSrc(image.NewUniform(color.RGBA{R: 0, G: 0, B: 0, A: 255}))
 		c.SetFontSize(float64(fontSize))
 		c.SetFont(randFontFrom(fonts))
 		x := fontWidth*i + fontWidth/fontSize
